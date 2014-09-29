@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>My Civilization</title>
+</head>
+<body>
+
+<h1>我的文明</h1>
+<p>历史：</p>
+<p>人口：</p>
+<p>事件：</p>
+<ul id="msgBox">
+    <li id="msg1"></li>
+    <li id="msg2"></li>
+    <li id="msg3"></li>
+    <li id="msg4"></li>
+    <li id="msg5"></li>
+    <li id="msg6"></li>
+    <li id="msg7"></li>
+    <li id="msg8"></li>
+</ul>
+
+
+<script src="Class.js"></script>
+
+<script>
+    var msgBox = document.getElementById("msgBox");
+    var ALL_LI = 8;
+    var count = ALL_LI;
+    function showMsg(string){
+        var _old = document.getElementById("msg" + count);
+
+        count++;
+        if(count > ALL_LI){
+            count = 1;
+        }
+
+        var _new = document.createElement("li");
+        _new.id = _old.id;
+        _new.innerHTML = string;
+
+        msgBox.insertBefore(_new, msgBox.firstChild);
+        msgBox.removeChild(_old);
+    }
+    showMsg("文明开始");
+</script>
+
+</body>
+</html>
